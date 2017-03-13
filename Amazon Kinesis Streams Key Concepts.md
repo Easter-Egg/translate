@@ -7,19 +7,19 @@
 
 ### Streams Terminology
 #### Amazon Kinesis Streams
-아마존 키네시스 스트림은 정렬된 데이터 레코드들의 집합입니다. 스트림의 각 레코드들은 스트림이 할당한 [시퀀스 넘버]를 가지고 있습니다. 스트림의 데이터 레코드들은 [샤드]에 분류합니다.
+아마존 키네시스 스트림은 정렬된 데이터 레코드들의 집합입니다. 스트림의 각 레코드들은 스트림이 할당한 [시퀀스 넘버](http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#sequence-number)를 가지고 있습니다. 스트림의 데이터 레코드들은 [샤드](http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#shard)에 분류합니다.
 
 #### Data Records
-데이터 레코드는 [아마존 키네시스 스트림]에 저장되는 데이터의 단위입니다. 데이터 레코드는 [시퀀스 넘버], [파티션 키], 그리고 데이터 객체로 구성되어 있으며, 이는 변하지 않는 일련의 바이트들입니다. 스트림은 어떠한 경우에도 데이터 객체 내의 내용을 변경하거나 접근하지 않습니다. 데이터 객체 크기는 1MB까지 가능합니다.
+데이터 레코드는 [아마존 키네시스 스트림](http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#stream)에 저장되는 데이터의 단위입니다. 데이터 레코드는 [시퀀스 넘버](http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#sequence-number), [파티션 키](http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key), 그리고 데이터 객체로 구성되어 있으며, 이는 변하지 않는 일련의 바이트들입니다. 스트림은 어떠한 경우에도 데이터 객체 내의 내용을 변경하거나 접근하지 않습니다. 데이터 객체 크기는 1MB까지 가능합니다.
 
 #### Retention Period(데이터 보유 기간)
-시간 데이터 레코드들의 길이는 그들이 스트림에 추가된 후에 접근 할 수 있습니다. 스트림의 데이터 보유 기간은 기본적으로 24시간으로 설정되어 있습니다. 이 기간은 [IncreaseStreamRetentionPeriod] 명령을 통해서 최대 168시간(7일)까지 증가시킬 수 있습니다. 그리고 이 기간을 [DecreaseStreamRetentionPeriod] 명령을 통해 최소 24시간으로 낮출 수도 있습니다. 추가적인 요금은 데이터 보유 기간이 24시간보다 높게 설정 되어 있는 경우에 발생합니다. 더 많은 정보는 [아마존 키네시스 스트림 요금정책]에서 확인할 수 있습니다.
+시간 데이터 레코드들의 길이는 그들이 스트림에 추가된 후에 접근 할 수 있습니다. 스트림의 데이터 보유 기간은 기본적으로 24시간으로 설정되어 있습니다. 이 기간은 [IncreaseStreamRetentionPeriod](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_IncreaseStreamRetentionPeriod.html) 명령을 통해서 최대 168시간(7일)까지 증가시킬 수 있습니다. 그리고 이 기간을 [DecreaseStreamRetentionPeriod](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_DecreaseStreamRetentionPeriod.html) 명령을 통해 최소 24시간으로 낮출 수도 있습니다. 추가적인 요금은 데이터 보유 기간이 24시간보다 높게 설정 되어 있는 경우에 발생합니다. 더 많은 정보는 [아마존 키네시스 스트림 요금정책](https://aws.amazon.com/ko/kinesis/streams/pricing/)에서 확인할 수 있습니다.
 
 #### Produces
 생산자는 아마존 키네시스 스트림에 데이터를 넣습니다. 예를 들어, 스트림으로 로그 데이터를 보내는 웹 서버를 생산자라고 할 수 있습니다.
 
 #### Consumers
-소비자는 아마존 키네시스 스트림으로부터 데이터를 가져오고 처리합니다. 이러한 소비자들은 [아마존 키네시스 스트림 어플리케이션]을 의미합니다.
+소비자는 아마존 키네시스 스트림으로부터 데이터를 가져오고 처리합니다. 이러한 소비자들은 [아마존 키네시스 스트림 어플리케이션](http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#enabled-application)을 의미합니다.
 
 #### Amazon Kinesis Streams Applications
 아마존 키네시스 스트림 어플리케이션은 일반적으로 EC2 인스턴스들 위에서 돌아가는 스트림 소비자들을 의미합니다.
