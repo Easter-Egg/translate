@@ -1,4 +1,4 @@
-# Amazon Kinesis Streams Key Concepts
+# Amazon Kinesis Streams Key Concepts ([원문](http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html))
 아마존 키네시스 스트림을 이용하기 전에, 다음 구조와 용어들을 이해하는 것이 효율적일 것입니다.
 
 ### Streams High-level Architecture
